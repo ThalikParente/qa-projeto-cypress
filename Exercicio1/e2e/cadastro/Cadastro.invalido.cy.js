@@ -1,4 +1,4 @@
-import Chance from 'chance';
+
 const chance = require('chance').Chance();
 const firstName = chance.first();
 const lastName = chance.last();
