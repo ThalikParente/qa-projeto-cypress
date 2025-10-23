@@ -1,6 +1,6 @@
 # 🐞 Bug Report — Real World App
-**ID:** BUG-XX01  
-**Título:** Sistema permite transfereência mesmo com saldo menor do que o valor enviado.
+**ID:** BUG-01  
+**Título:** Sistema permite transferência mesmo com saldo menor do que o valor enviado.
 
 **Autor:** Thálik Andrade Parente  
 **Data:** [21/10/2025]  
@@ -43,7 +43,7 @@ A transação não deveria acontecer e deveria apresentar uma mensagem de erro: 
 
 ## 💬 Observações
 * O problema ocorre, independente do valor inserido.
-* Não aparenta ter validação de salvo insuficiente criada.
+* Não aparenta ter validação de saldo insuficiente criada.
 
 **Ambiente de teste:**  
 - Navegador: [ex: Google Chrome 141.0]  
@@ -53,6 +53,6 @@ A transação não deveria acontecer e deveria apresentar uma mensagem de erro: 
 ---
 
 ## 💡 Sugestão de Correção
-Incluir no processo, a validação do saldo, visando bloquear transações superiores ao saldo disponível.
+Incluir uma verificação de saldo antes de confirmar a transação, bloqueando valores superiores ao saldo disponível e exibindo uma mensagem clara ao usuário.
 
 ---

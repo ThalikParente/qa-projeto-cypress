@@ -10,7 +10,7 @@
 **Objetivo:** Verificar se o sistema permite o cadastro de novos usuários com as informações válidas.
 **Passos**
 1. Acessar tela de login.
-2. Clicar em "Don't have an account? Sign up"
-3. Preencher todos os campos obrigatórios
-4. Clicar em "Sign up"
+2. Clicar em "Don't have an account? Sign up".
+3. Preencher todos os campos obrigatórios.
+4. Clicar em "Sign up".
 **Resultado esperado:** O sistema cria o novo usuário e redireciona para a tela de login.

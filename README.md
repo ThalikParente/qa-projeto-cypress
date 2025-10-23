@@ -1,36 +1,66 @@
-# 🧩 Exercício 1 — Testes End-to-End com Cypress
+# 🧩 Testes End-to-End com Cypress — Real World App (RWA)
 
-Este exercício faz parte do meu processo de estudos e prática em **automação de testes com Cypress**, utilizando a aplicação **Real World App (RWA)** — uma aplicação real criada pela equipe do Cypress para simular cenários de autenticação, cadastro e transações financeiras.
+Este repositório faz parte do meu processo de estudos e prática em **automação de testes com Cypress**, utilizando a aplicação **Real World App (RWA)** — uma aplicação real criada pela equipe do Cypress para simular cenários de autenticação, cadastro e transações financeiras.  
 
-O objetivo é colocar em prática o que venho aprendendo sobre **identificação de cenários de teste, escrita de casos de teste e automação end-to-end.**
+O objetivo é colocar em prática o que venho aprendendo sobre:
+- Identificação e documentação de **cenários de teste**;  
+- Escrita de **casos de teste manuais**;  
+- **Automação end-to-end** com boas práticas;  
+- Estruturação de **Page Objects** e reutilização de código.  
+
+---
+
+## ⚙️ Pré-requisitos
+
+Antes de executar os testes, é necessário:
+
+1. Ter o **Node.js** instalado (versão 18 ou superior);  
+2. Clonar este repositório:  
+   ```bash
+   git clone https://github.com/seuusuario/nome-do-repositorio.git
+   ```
+3. Instalar as dependências do projeto:  
+   ```bash
+   npm install
+   ```
+4. Instalar o **Cypress** (caso ainda não esteja instalado globalmente):  
+   ```bash
+   npm install cypress --save-dev
+   ```
+5. Acessar a aplicação **Real World App (RWA)**:  
+   🔗 [https://example.cypress.io/realworld](https://example.cypress.io/realworld)  
+   *(ou o link configurado no ambiente do curso)*  
+
+---
+
+# 🧩 Exercício 1 — Login e Cadastro de Usuários
+
+Este exercício aborda cenários de **autenticação e registro de novos usuários**, praticando a automação de fluxos básicos do sistema.
 
 ---
 
 ## 🧾 Casos de Teste Documentados
 
-Os casos de teste deste exercício estão disponíveis na pasta [`docs`](./Exercicio1/docs):
+Os casos de teste estão disponíveis na pasta [`docs`](./Exercicio1/docs):
 
 | ID | Nome | Descrição |
 |------|-------|------------|
-| [CT-01](./docs/ct-01_login_valido.md) | Login com sucesso | Verifica se o login é realizado com credenciais válidas. |
-| [CT-02](./docs/ct-02_login_invalido.md) | Login com credenciais inválidas | Verifica se o sistema exibe erro com email/senha incorretos. |
-| [CT-03](./docs/ct-03_cadastro_valido.md) | Registro de novo usuário com sucesso | Verifica se é possível cadastrar um novo usuário com dados válidos. |
-| [CT-04](./docs/ct-04_cadastro_incompleto.md) | Registro com informações faltantes | Verifica se o sistema impede o cadastro quando há campos obrigatórios vazios. |
+| [CT-01](./docs/ct-01_login_valido.md) | Login com sucesso | Verifica se o login é realizado corretamente com credenciais válidas. |
+| [CT-02](./docs/ct-02_login_invalido.md) | Login com credenciais inválidas | Verifica se o sistema exibe mensagem de erro ao tentar logar com email/senha incorretos. |
+| [CT-03](./docs/ct-03_register_valido.md) | Registro de novo usuário com sucesso | Verifica se é possível cadastrar um novo usuário com dados válidos. |
+| [CT-04](./docs/ct-04_register_incompleto.md) | Registro com informações faltantes | Verifica se o sistema impede o cadastro quando há campos obrigatórios vazios. |
 
 ---
 
-
 # 🧩 Exercício 2 — Transferência e Solicitação de Dinheiro
 
-Este exercício faz parte da minha prática em **automação de testes com Cypress**, utilizando a aplicação **Real World App (RWA)** — uma aplicação real criada pela equipe do Cypress para simular cenários de autenticação, cadastro e transações financeiras.
-
-O objetivo é colocar em prática o que venho aprendendo sobre **testes de fluxo de transferência e solicitação de valores**, abrangendo desde a **definição dos casos de teste** até a **automação end-to-end**.
+Neste exercício, os testes abordam cenários de **transações financeiras** entre usuários, com foco na validação de fluxos de transferência e solicitação de valores.
 
 ---
 
 ## 🧾 Casos de Teste Documentados
 
-Os casos de teste deste exercício estão disponíveis na pasta [`docs`](./Exercicio2/docs):
+Os casos de teste estão disponíveis na pasta [`docs`](./Exercicio2/docs):
 
 | ID | Nome | Descrição |
 |------|-------|------------|
@@ -49,14 +79,34 @@ Mais detalhes estão documentados em:
 
 ---
 
-## 🧠 Aprendizados
+# 🧩 Exercício 3 — Histórico de Transações
 
-- Prática de autenticação e transações entre usuários.  
-- Identificação e documentação de **bugs funcionais** com evidências.  
-- Escrita de testes automatizados com **Cypress**, usando boas práticas de organização.  
-- Melhoria na padronização dos **casos de teste e commits**.  
+O terceiro exercício tem como foco **a validação do histórico de transações**, garantindo que os registros sejam exibidos corretamente após operações de envio, recebimento ou solicitação de valores.
 
 ---
 
-📅 **Ultima atualização:** 21/10/2025  
-👤 **Autor:** Thálik Andrade Parente
+## 🧾 Casos de Teste Documentados
+
+Os casos de teste estão disponíveis na pasta [`docs`](./Exercicio3/docs):
+
+| ID | Nome | Descrição |
+|------|-------|------------|
+| [CT-01](./docs/ct-01_historico_exibicao.md) | Exibição de histórico de transações | Verifica se o histórico é exibido corretamente após o login. |
+| [CT-02](./docs/ct-02_historico_detalhe.md) | Detalhe de transação | Verifica se o sistema exibe as informações corretas ao abrir o detalhe de uma transação. |
+| [CT-03](./docs/ct-03_historico_filtro.md) | Filtro de transações | Verifica se os filtros de histórico funcionam corretamente ao exibir transações específicas. |
+
+---
+
+# 🧠 Aprendizados Gerais
+
+✅ Aplicação de boas práticas de **estruturação de testes Cypress** (com uso de Page Objects e fixtures).  
+✅ Criação e documentação de **casos de teste manuais** antes da automação.  
+✅ Identificação e registro de **defeitos funcionais** com evidências.  
+✅ Organização do projeto e versionamento com **commits padronizados**.  
+✅ Utilização do **beforeEach** para otimizar a repetição de etapas nos testes.  
+
+---
+
+📅 **Última atualização:** 23/10/2025  
+👤 **Autor:** Thálik Andrade Parente  
+💬 “**Qualidade não é uma fase, é uma cultura dentro do time.**”
