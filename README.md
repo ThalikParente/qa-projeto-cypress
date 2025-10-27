@@ -1,11 +1,13 @@
 # 🧩 Testes End-to-End com Cypress  
 ### Projeto baseado na aplicação Real World App (RWA)
 
-Este repositório faz parte do meu processo de estudos e prática em **automação de testes com Cypress**, utilizando a aplicação **Real World App (RWA)** — uma aplicação real criada pela equipe do Cypress para simular cenários de autenticação, cadastro e transações financeiras.  
+Este repositório faz parte do meu processo de estudos e prática em **automação de testes com Cypress**, utilizando a aplicação **Real World App (RWA)**, uma aplicação real criada pela equipe do Cypress para simular cenários de autenticação, cadastro e transações financeiras.  
 
 O foco deste projeto é desenvolver habilidades práticas de QA com base em um sistema real, aplicando boas práticas de automação e documentação de testes.
 
 # 🎯 O objetivo é colocar em prática:
+
+O objetivo deste projeto é colocar em prática os aprendizados sobre:
 
 - Identificar e documentar cenários de teste.
 - Escrever e organizar casos de teste manuais.
@@ -15,52 +17,57 @@ O foco deste projeto é desenvolver habilidades práticas de QA com base em um s
 
 ---
 
-## ⚙️ Como Executar os Testes
-
-1️⃣ Pré-requisitos
+## ⚙️ Pré-requisitos
 
 Antes de executar os testes, é necessário:
 
 - Node.js (versão 18 ou superior)
 - Git instalado e configurado
+- Cypress instalado localmente no projeto (ou como dependência)
 
-2️⃣ Clonar o projeto base (aplicação oficial)
- Este projeto foi construído sobre o repositório oficial Real World App.
+## 🚀 Como executar o projeto
+
+🔹 Clonar o repositório oficial da aplicação (base da automação)
+ 
 ```bash
 git clone https://github.com/cypress-io/cypress-realworld-app.git
 ```
-Acesse a pasta do projeto:
+🔹 Clonar este repositório com os testes automatizados
+
+```bash
+git clone https://github.com/ThalikParente/qa-projeto-cypress.git
+```
+🔹 Acessar o diretório da aplicação
+
 ```bash
 cd cypress-realworld-app
 ```
-Instale as dependências:
+🔹 Instalar as dependências
+
 ```bash
 npm install
 ```
-3️⃣ Instalar o Cypress (caso não esteja presente)
-Se o Cypress ainda não estiver instalado, execute:
 
-Instalar o **Cypress** (caso ainda não esteja instalado globalmente):  
+🔹 Executar o servidor local (da aplicação base)
 ```bash
-npm install cypress --save-dev
+npm start
 ```
-Para abrir a interface do Cypress:
+O servidor roda em http://localhost:3000
+
+🔹 Em outra janela do terminal, acessar o diretório dos testes automatizados
+
+```bash
+cd ../qa-projeto-cypress
+```
+🔹 Abrir o Cypress para rodar os testes
+
 ```
 npx cypress open
 ```
-4️⃣ Adicionar meus arquivos de automação
-
-Após instalar o RWA e o Cypress, adicione meus arquivos de automação (pastas como `cypress/e2e`, `support`, `docs`, etc.) dentro do projeto clonado:
-
-```
-git clone https://github.com/ThalikParente/qa-projeto-cypress.git
-```
-Após adicionar os arquivos, os testes poderão ser executados normalmente dentro da interface do Cypress.
-
 
 ## 🧩 Estrutura dos Exercícios
 
-Os testes estão divididos por temas conforme os exercícios do curso:
+Os testes deste projeto foram desenvolvidos utilizando o padrão Page Object Model (POM) para garantir organização, reutilização e facilidade de manutenção.
 
 ## 🔹 Exercício 1 — Login e Cadastro de Usuários
 
@@ -124,10 +131,10 @@ Os casos de teste estão disponíveis na pasta [`casos-de-teste`](./Exercicio3/d
 
 ## 🔗 Recursos e Referências
 
-- [Aplicação oficial — Real World App (RWA)](https://github.com/cypress-io/cypress-realworld-app)
-- [Documentação oficial do Cypress](https://docs.cypress.io/)
-- [Meu repositório de automação](https://github.com/ThalikParente/qa-projeto-cypress)
-- [Repositório Cypress Heroes (projeto oficial da equipe Cypress)](https://github.com/cypress-io/cypress-heroes)
+- 📘 **Documentação do Cypress:** [Documentação oficial do Cypress](https://docs.cypress.io/)
+- 🧩 **Repositório oficial do Projeto Base (RWA):** [Aplicação oficial — Real World App (RWA)](https://github.com/cypress-io/cypress-realworld-app)
+- 💻 **Repositório deste pprojeto:** [Meu repositório de automação](https://github.com/ThalikParente/qa-projeto-cypress)
+- 🧩 **Projeto posterior:** [Repositório Cypress Heroes (projeto oficial da equipe Cypress)](https://github.com/cypress-io/cypress-heroes)
 
 
 ---
