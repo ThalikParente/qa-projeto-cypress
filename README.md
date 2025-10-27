@@ -1,72 +1,91 @@
-# 🧩 Testes End-to-End com Cypress — Real World App (RWA)
+# 🧩 Testes End-to-End com Cypress  
+### Projeto baseado na aplicação Real World App (RWA)
 
 Este repositório faz parte do meu processo de estudos e prática em **automação de testes com Cypress**, utilizando a aplicação **Real World App (RWA)** — uma aplicação real criada pela equipe do Cypress para simular cenários de autenticação, cadastro e transações financeiras.  
 
-O objetivo é colocar em prática o que venho aprendendo sobre:
-- Identificação e documentação de **cenários de teste**;  
-- Escrita de **casos de teste manuais**;  
-- **Automação end-to-end** com boas práticas;  
-- Estruturação de **Page Objects** e reutilização de código.  
+O foco deste projeto é desenvolver habilidades práticas de QA com base em um sistema real, aplicando boas práticas de automação e documentação de testes.
+
+# 🎯 O objetivo é colocar em prática:
+
+- Identificar e documentar cenários de teste.
+- Escrever e organizar casos de teste manuais.
+- Automatizar fluxos end-to-end utilizando boas práticas.
+- Aplicar o padrão Page Object Model (POM) para reutilização de código.
+- Registrar e reportar defeitos funcionais detectados.
 
 ---
 
-## ⚙️ Pré-requisitos
+## ⚙️ Como Executar os Testes
+
+1️⃣ Pré-requisitos
 
 Antes de executar os testes, é necessário:
 
-1. Ter o **Node.js** instalado (versão 18 ou superior);  
-2. Clonar este repositório:  
-   ```bash
-   git clone https://github.com/seuusuario/nome-do-repositorio.git
-   ```
-3. Instalar as dependências do projeto:  
-   ```bash
-   npm install
-   ```
-4. Instalar o **Cypress** (caso ainda não esteja instalado globalmente):  
-   ```bash
-   npm install cypress --save-dev
-   ```
-5. Acessar a aplicação **Real World App (RWA)**:  
-   🔗 [https://example.cypress.io/realworld](https://example.cypress.io/realworld)  
-   *(ou o link configurado no ambiente do curso)*  
+- Node.js (versão 18 ou superior)
+- Git instalado e configurado
+
+2️⃣ Clonar o projeto base (aplicação oficial)
+ Este projeto foi construído sobre o repositório oficial Real World App.
+```bash
+git clone https://github.com/cypress-io/cypress-realworld-app.git
+```
+Acesse a pasta do projeto:
+```bash
+cd cypress-realworld-app
+```
+Instale as dependências:
+```bash
+npm install
+```
+3️⃣ Instalar o Cypress (caso não esteja presente)
+Se o Cypress ainda não estiver instalado, execute:
+
+Instalar o **Cypress** (caso ainda não esteja instalado globalmente):  
+```bash
+npm install cypress --save-dev
+```
+Para abrir a interface do Cypress:
+```
+npx cypress open
+```
+4️⃣ Adicionar meus arquivos de automação
+
+Após instalar o RWA e o Cypress, adicione meus arquivos de automação (pastas como `cypress/e2e`, `support`, `docs`, etc.) dentro do projeto clonado:
+
+```
+git clone https://github.com/ThalikParente/qa-projeto-cypress.git
+```
+Após adicionar os arquivos, os testes poderão ser executados normalmente dentro da interface do Cypress.
+
+
+## 🧩 Estrutura dos Exercícios
+
+Os testes estão divididos por temas conforme os exercícios do curso:
+
+## 🔹 Exercício 1 — Login e Cadastro de Usuários
+
+Foco nos cenários de autenticação e criação de contas.
+Os casos de teste estão disponíveis na pasta [`casos-de-teste`](./Exercicio1/docs/casos-de-teste):
+
+| ID    | Nome                            | Descrição                                              |
+| ----- | ------------------------------- | ------------------------------------------------------ |
+| [CT-01](./Exercicio1/docs/casos-de-teste/ct-01-login-valido.md)| Login com sucesso               | Verifica login com credenciais válidas.                |
+| [CT-02](./Exercicio1/docs/casos-de-teste/ct-02-login-invalido.md) | Login inválido               | Valida mensagem de erro ao logar com dados incorretos. |
+| [CT-03](./Exercicio1/docs/casos-de-teste/ct-03-cadastro-com-sucesso.md) | Cadastro de usuário com sucesso | Valida o fluxo de registro completo.          |
+| [CT-04](./Exercicio1/docs/casos-de-teste/ct-04-cadastro-invalido.md) | Cadastro com campos vazios      | Valida mensagens de erro para campos obrigatórios.     |
 
 ---
 
-# 🧩 Exercício 1 — Login e Cadastro de Usuários
+## 🔹 Exercício 2 — Transferência e Solicitação de Dinheiro
 
-Este exercício aborda cenários de **autenticação e registro de novos usuários**, praticando a automação de fluxos básicos do sistema.
+Validações de transações entre usuários.
+Os casos de teste estão disponíveis na pasta [`casos-de-teste`](./Exercicio2/docs/casos-de-teste):
 
----
-
-## 🧾 Casos de Teste Documentados
-
-Os casos de teste estão disponíveis na pasta [`docs`](./Exercicio1/docs):
-
-| ID | Nome | Descrição |
-|------|-------|------------|
-| [CT-01](./docs/ct-01_login_valido.md) | Login com sucesso | Verifica se o login é realizado corretamente com credenciais válidas. |
-| [CT-02](./docs/ct-02_login_invalido.md) | Login com credenciais inválidas | Verifica se o sistema exibe mensagem de erro ao tentar logar com email/senha incorretos. |
-| [CT-03](./docs/ct-03_register_valido.md) | Registro de novo usuário com sucesso | Verifica se é possível cadastrar um novo usuário com dados válidos. |
-| [CT-04](./docs/ct-04_register_incompleto.md) | Registro com informações faltantes | Verifica se o sistema impede o cadastro quando há campos obrigatórios vazios. |
-
----
-
-# 🧩 Exercício 2 — Transferência e Solicitação de Dinheiro
-
-Neste exercício, os testes abordam cenários de **transações financeiras** entre usuários, com foco na validação de fluxos de transferência e solicitação de valores.
-
----
-
-## 🧾 Casos de Teste Documentados
-
-Os casos de teste estão disponíveis na pasta [`docs`](./Exercicio2/docs):
-
-| ID | Nome | Descrição |
-|------|-------|------------|
-| [CT-01](./docs/ct-01_transferencia_valida.md) | Transferência com sucesso | Verifica se o sistema realiza corretamente uma transferência com saldo suficiente. |
-| [CT-02](./docs/ct-02_transferencia_saldo_insuficiente.md) | Transferência com saldo insuficiente | Verifica se o sistema impede a transferência quando o saldo é menor que o valor informado. |
-| [CT-03](./docs/ct-03_solicitacao_transferencia.md) | Solicitação de transferência | Verifica se o sistema permite solicitar uma transferência para outro usuário. |
+| ID    | Nome                                 | Descrição                                   |
+| ----- | ------------------------------------ | ------------------------------------------- |
+| [CT-01](./Exercicio2/docs/casos-de-teste/ct-01-transferencia-valida.md) | Transferência com sucesso            | Realiza transferência com saldo suficiente. |
+| [CT-02](./Exercicio2/docs/casos-de-teste/ct-02-transferencia-saldo-insuficiente.md) | Transferência com saldo insuficiente | Impede transferência sem saldo.             |
+| [CT-03](./Exercicio2/docs/casos-de-teste/ct-03-solicitar-transferencia.md) | Solicitação de dinheiro              | Verifica solicitação de transferência.      |
 
 ---
 
@@ -75,38 +94,48 @@ Os casos de teste estão disponíveis na pasta [`docs`](./Exercicio2/docs):
 Durante a execução dos testes, foi identificado um **defeito funcional** na aplicação relacionado ao cenário de **transferência com saldo insuficiente**, onde o sistema permite concluir a operação mesmo sem saldo disponível.
 
 Mais detalhes estão documentados em:  
-[`BUG-01-transferencia-saldo-insuficiente.md`](./docs/bug-reports/BUG-01-transferencia-saldo-insuficiente.md)
+[`BUG-01-transferencia-saldo-insuficiente.md`](./Exercicio2/docs/bugs/BUG-01-transferencia-saldo-insuficiente.md)
 
 ---
 
-# 🧩 Exercício 3 — Histórico de Transações
+## 🔹 Exercício 3 — Histórico de Transações
 
-O terceiro exercício tem como foco **a validação do histórico de transações**, garantindo que os registros sejam exibidos corretamente após operações de envio, recebimento ou solicitação de valores.
+Validação da exibição e filtragem do histórico de transações.
 
----
+Os casos de teste estão disponíveis na pasta [`casos-de-teste`](./Exercicio3/docs/casos-de-teste):
 
-## 🧾 Casos de Teste Documentados
-
-Os casos de teste estão disponíveis na pasta [`docs`](./Exercicio3/docs):
-
-| ID | Nome | Descrição |
-|------|-------|------------|
-| [CT-01](./docs/ct-01_historico_exibicao.md) | Exibição de histórico de transações | Verifica se o histórico é exibido corretamente após o login. |
-| [CT-02](./docs/ct-02_historico_detalhe.md) | Detalhe de transação | Verifica se o sistema exibe as informações corretas ao abrir o detalhe de uma transação. |
-| [CT-03](./docs/ct-03_historico_filtro.md) | Filtro de transações | Verifica se os filtros de histórico funcionam corretamente ao exibir transações específicas. |
+| ID    | Nome                  | Descrição                                          |
+| ----- | --------------------- | -------------------------------------------------- |
+| [CT-01](./Exercicio3/docs/casos-de-teste/ct-01-visualizar-historico-transacoes.md) | Visualizar histórico de transações | Verifica histórico após o login. |
+| [CT-02](https://github.com/ThalikParente/qa-projeto-cypress/blob/main/Exercicio3/docs/casos-de-teste/ct-02-transacoes-novo-usuario.md) | Transações novo usuário  | Exibe corretamente o histórico de transações de um novo usuário |
 
 ---
 
-# 🧠 Aprendizados Gerais
+## 🧠 Aprendizados Gerais
 
-✅ Aplicação de boas práticas de **estruturação de testes Cypress** (com uso de Page Objects e fixtures).  
-✅ Criação e documentação de **casos de teste manuais** antes da automação.  
+✅ Aplicação de boas práticas de estruturação de testes com **Cypress e Page Objects**.  
+✅ Documentação de casos de teste antes da automação.  
 ✅ Identificação e registro de **defeitos funcionais** com evidências.  
-✅ Organização do projeto e versionamento com **commits padronizados**.  
-✅ Utilização do **beforeEach** para otimizar a repetição de etapas nos testes.  
+✅ Organização e versionamento com **commits padronizados**.  
+✅ Utilização de hooks **beforeEach** para reduzir redundâncias nos testes.  
+✅ Prática completa do ciclo de QA: análise, planejamento, execução, automação e reporte.
 
 ---
 
-📅 **Última atualização:** 23/10/2025  
-👤 **Autor:** Thálik Andrade Parente  
+## 🔗 Recursos e Referências
+
+- [Aplicação oficial — Real World App (RWA)](https://github.com/cypress-io/cypress-realworld-app)
+- [Documentação oficial do Cypress](https://docs.cypress.io/)
+- [Meu repositório de automação](https://github.com/ThalikParente/qa-projeto-cypress)
+- [Repositório Cypress Heroes (projeto oficial da equipe Cypress)](https://github.com/cypress-io/cypress-heroes)
+
+
+---
+
+📅 **Última atualização:** 27/10/2025  
+👤 **Autor:** [Thálik Andrade Parente](https://github.com/ThalikParente)  
 💬 “**Qualidade não é uma fase, é uma cultura dentro do time.**”
+
+[![Linkedin](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thálik-parente/) 
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:thalik.aparente@gmail.com)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/thalik6)
