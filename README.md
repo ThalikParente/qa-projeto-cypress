@@ -1,148 +1,165 @@
-# 🧩 Testes End-to-End com Cypress  
-### Projeto baseado na aplicação Real World App (RWA)
+# 🧪 E2E Test Automation – Real World App (Cypress)
 
-Este repositório faz parte do meu processo de estudos e prática em **automação de testes com Cypress**, utilizando a aplicação **Real World App (RWA)**, uma aplicação real criada pela equipe do Cypress para simular cenários de autenticação, cadastro e transações financeiras.  
+Projeto de automação de testes end-to-end focado na validação de fluxos críticos de uma aplicação web com cenários reais de autenticação, cadastro e transações financeiras.
 
-O foco deste projeto é desenvolver habilidades práticas de QA com base em um sistema real, aplicando boas práticas de automação e documentação de testes.
-
-# 🎯 O objetivo é colocar em prática:
-
-O objetivo deste projeto é colocar em prática os aprendizados sobre:
-
-- Identificar e documentar cenários de teste.
-- Escrever e organizar casos de teste manuais.
-- Automatizar fluxos end-to-end utilizando boas práticas.
-- Aplicar o padrão Page Object Model (POM) para reutilização de código.
-- Registrar e reportar defeitos funcionais detectados.
+A automação foi desenvolvida utilizando Cypress, com foco em qualidade, comportamento do sistema e validação de regras de negócio em fluxos sensíveis.
 
 ---
 
-## ⚙️ Pré-requisitos
+## 🎯 Objetivo
 
-Antes de executar os testes, é necessário:
+Validar o comportamento da aplicação em cenários críticos, garantindo:
 
-- Node.js (versão 18 ou superior)
-- Git instalado e configurado
-- Cypress instalado localmente no projeto (ou como dependência)
+- Autenticação de usuários (login e cadastro)
+- Execução de transações financeiras entre usuários
+- Validação de saldo e regras de negócio
+- Exibição e integridade do histórico de transações
+- Tratamento de erros e cenários negativos
 
-## 🚀 Como executar o projeto
+---
 
-🔹 Clonar o repositório oficial da aplicação (base da automação)
- 
+## 🧪 Cenários cobertos
+
+Os cenários foram definidos com base em comportamento real do usuário e priorização de fluxos críticos da aplicação:
+
+- Login com credenciais válidas e inválidas  
+- Cadastro de novos usuários  
+- Transferência de dinheiro entre usuários  
+- Solicitação de pagamento  
+- Validação de saldo insuficiente  
+- Visualização e filtragem de histórico de transações  
+
+---
+
+## 🧾 Casos de Teste Documentados
+
+Os cenários foram previamente estruturados e documentados antes da automação, seguindo abordagem baseada em comportamento do usuário e regras de negócio.
+
+### 🔹 Autenticação e Cadastro
+
+| ID | Nome | Descrição |
+|----|------|----------|
+| CT-01 | Login válido | Verifica login com credenciais válidas |
+| CT-02 | Login inválido | Valida mensagem de erro com dados incorretos |
+| CT-03 | Cadastro com sucesso | Valida fluxo completo de registro |
+| CT-04 | Cadastro inválido | Valida mensagens de erro em campos obrigatórios |
+
+---
+
+### 🔹 Transações Financeiras
+
+| ID | Nome | Descrição |
+|----|------|----------|
+| CT-05 | Transferência com sucesso | Realiza transferência com saldo suficiente |
+| CT-06 | Saldo insuficiente | Valida bloqueio de transferência sem saldo |
+| CT-07 | Solicitação de dinheiro | Verifica fluxo de solicitação de pagamento |
+
+---
+
+### 🔹 Histórico de Transações
+
+| ID | Nome | Descrição |
+|----|------|----------|
+| CT-08 | Visualizar histórico | Verifica exibição após login |
+| CT-09 | Novo usuário | Valida comportamento sem transações |
+
+📌 Casos de teste detalhados disponíveis nas pastas `/Exercicio*/docs`
+
+---
+
+## 🐞 Bug identificado
+
+Durante a execução dos testes, foi identificado um defeito funcional:
+
+- **Cenário:** Transferência com saldo insuficiente  
+- **Problema:** O sistema permite concluir a operação mesmo sem saldo disponível  
+
+📌 Documentação completa:  
+`/Exercicio2/docs/bugs/BUG-01-transferencia-saldo-insuficiente.md`
+
+---
+
+## 🛠️ Stack utilizada
+
+- Cypress (E2E Test Automation)
+- JavaScript
+- Node.js
+- Page Object Model (POM)
+- Custom Commands
+
+---
+
+## 🧩 Estrutura do projeto
+
+A automação segue boas práticas para garantir escalabilidade e manutenção:
+
+- Page Objects → separação da lógica de interação  
+- Custom Commands → reutilização de ações  
+- Organização por domínio funcional  
+- Cenários independentes e reutilizáveis  
+
+---
+
+## 🚀 Execução dos testes
+
+### Pré-requisitos:
+- Node.js 18+
+- Git
+
+### Passos:
+
 ```bash
+# Clonar aplicação base
 git clone https://github.com/cypress-io/cypress-realworld-app.git
-```
-🔹 Clonar este repositório com os testes automatizados
 
-```bash
-git clone https://github.com/ThalikParente/qa-projeto-cypress.git
-```
-🔹 Acessar o diretório da aplicação
+# Clonar este repositório
+git clone https://github.com/SEU-NOVO-NOME-AQUI.git
 
-```bash
+# Acessar aplicação
 cd cypress-realworld-app
-```
-🔹 Instalar as dependências
-
-```bash
 npm install
-```
-
-🔹 Executar o servidor local (da aplicação base)
-```bash
 npm start
 ```
-O servidor roda em http://localhost:3000
-
-🔹 Em outra janela do terminal, acessar o diretório dos testes automatizados
+Aplicação disponível em: http://localhost:3000
 
 ```bash
-cd ../qa-projeto-cypress
-```
-🔹 Abrir o Cypress para rodar os testes
+# Em outro terminal
+cd SEU-NOVO-NOME-AQUI
 
-```
+# Executar Cypress
 npx cypress open
 ```
+---
+## 🧠 Abordagem de Qualidade
 
-## 🧩 Estrutura dos Exercícios
+Os testes foram desenvolvidos com foco em:
 
-Os testes deste projeto foram desenvolvidos utilizando o padrão Page Object Model (POM) para garantir organização, reutilização e facilidade de manutenção.
-
-## 🔹 Exercício 1 — Login e Cadastro de Usuários
-
-Foco nos cenários de autenticação e criação de contas.
-Os casos de teste estão disponíveis na pasta [`casos-de-teste`](./Exercicio1/docs/casos-de-teste):
-
-| ID    | Nome                            | Descrição                                              |
-| ----- | ------------------------------- | ------------------------------------------------------ |
-| [CT-01](./Exercicio1/docs/casos-de-teste/ct-01-login-valido.md)| Login com sucesso               | Verifica login com credenciais válidas.                |
-| [CT-02](./Exercicio1/docs/casos-de-teste/ct-02-login-invalido.md) | Login inválido               | Valida mensagem de erro ao logar com dados incorretos. |
-| [CT-03](./Exercicio1/docs/casos-de-teste/ct-03-cadastro-com-sucesso.md) | Cadastro de usuário com sucesso | Valida o fluxo de registro completo.          |
-| [CT-04](./Exercicio1/docs/casos-de-teste/ct-04-cadastro-invalido.md) | Cadastro com campos vazios      | Valida mensagens de erro para campos obrigatórios.     |
+- Priorização baseada em risco  
+- Cobertura de fluxos críticos (financeiros)  
+- Validação de regras de negócio  
+- Testes positivos e negativos  
+- Simulação de uso real do sistema  
 
 ---
 
-## 🔹 Exercício 2 — Transferência e Solicitação de Dinheiro
+## 💡 Diferenciais
 
-Validações de transações entre usuários.
-Os casos de teste estão disponíveis na pasta [`casos-de-teste`](./Exercicio2/docs/casos-de-teste):
-
-| ID    | Nome                                 | Descrição                                   |
-| ----- | ------------------------------------ | ------------------------------------------- |
-| [CT-01](./Exercicio2/docs/casos-de-teste/ct-01-transferencia-valida.md) | Transferência com sucesso            | Realiza transferência com saldo suficiente. |
-| [CT-02](./Exercicio2/docs/casos-de-teste/ct-02-transferencia-saldo-insuficiente.md) | Transferência com saldo insuficiente | Impede transferência sem saldo.             |
-| [CT-03](./Exercicio2/docs/casos-de-teste/ct-03-solicitar-transferencia.md) | Solicitação de dinheiro              | Verifica solicitação de transferência.      |
+- Cobertura de fluxos financeiros e cenários críticos com foco em impacto de negócio
+- Identificação e documentação de defeitos reais  
+- Estrutura baseada em boas práticas de automação  
+- Aplicação de conceitos de STLC na construção dos testes  
 
 ---
 
-## 🐞 Bug Report
+## 🔗 Recursos
 
-Durante a execução dos testes, foi identificado um **defeito funcional** na aplicação relacionado ao cenário de **transferência com saldo insuficiente**, onde o sistema permite concluir a operação mesmo sem saldo disponível.
-
-Mais detalhes estão documentados em:  
-[`BUG-01-transferencia-saldo-insuficiente.md`](./Exercicio2/docs/bugs/BUG-01-transferencia-saldo-insuficiente.md)
+- Documentação Cypress: https://docs.cypress.io  
+- Projeto base: https://github.com/cypress-io/cypress-realworld-app  
 
 ---
 
-## 🔹 Exercício 3 — Histórico de Transações
+## 👤 Autor
 
-Validação da exibição e filtragem do histórico de transações.
+Thálik Parente  
 
-Os casos de teste estão disponíveis na pasta [`casos-de-teste`](./Exercicio3/docs/casos-de-teste):
-
-| ID    | Nome                  | Descrição                                          |
-| ----- | --------------------- | -------------------------------------------------- |
-| [CT-01](./Exercicio3/docs/casos-de-teste/ct-01-visualizar-historico-transacoes.md) | Visualizar histórico de transações | Verifica histórico após o login. |
-| [CT-02](https://github.com/ThalikParente/qa-projeto-cypress/blob/main/Exercicio3/docs/casos-de-teste/ct-02-transacoes-novo-usuario.md) | Transações novo usuário  | Exibe corretamente o histórico de transações de um novo usuário |
-
----
-
-## 🧠 Aprendizados Gerais
-
-✅ Aplicação de boas práticas de estruturação de testes com **Cypress e Page Objects**.  
-✅ Documentação de casos de teste antes da automação.  
-✅ Identificação e registro de **defeitos funcionais** com evidências.  
-✅ Organização e versionamento com **commits padronizados**.  
-✅ Utilização de hooks **beforeEach** para reduzir redundâncias nos testes.  
-✅ Prática completa do ciclo de QA: análise, planejamento, execução, automação e reporte.
-
----
-
-## 🔗 Recursos e Referências
-
-- 📘 **Documentação do Cypress:** [Documentação oficial do Cypress](https://docs.cypress.io/)
-- 🧩 **Repositório oficial do Projeto Base (RWA):** [Aplicação oficial — Real World App (RWA)](https://github.com/cypress-io/cypress-realworld-app)
-- 💻 **Repositório deste pprojeto:** [Meu repositório de automação](https://github.com/ThalikParente/qa-projeto-cypress)
-- 🧩 **Projeto posterior:** [Repositório Cypress Heroes (projeto oficial da equipe Cypress)](https://github.com/cypress-io/cypress-heroes)
-
-
----
-
-📅 **Última atualização:** 27/10/2025  
-👤 **Autor:** [Thálik Andrade Parente](https://github.com/ThalikParente)  
-💬 “**Qualidade não é uma fase, é uma cultura dentro do time.**”
-
-[![Linkedin](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thálik-parente/) 
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:thalik.aparente@gmail.com)
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/thalik6)
+💬 "Qualidade não é uma fase, é uma cultura dentro do time."
